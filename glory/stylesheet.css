@@ -86,7 +86,7 @@ background: linear-gradient(180deg, rgba(161,185,121,1) 0%, rgba(216,135,159,1) 
 .bodytext-cursive {
    font-family: 'Srisakdi', cursive;
 	font-size:2vw;
-   color:magenta;
+   color:#eb3492;
    padding-left:20%;
    padding-right:20%;
    text-align:center;
@@ -102,4 +102,9 @@ background: linear-gradient(180deg, rgba(161,185,121,1) 0%, rgba(216,135,159,1) 
 
 .img-center:hover {
    filter:hue-rotate(89deg);
+}
+
+.fixed-gif {
+   position:fixed;
+   z-index:100;
 }
