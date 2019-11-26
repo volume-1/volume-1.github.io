@@ -1,4 +1,4 @@
-@import url('https://use.typekit.net/psl7zas.css');
+@import url("https://use.typekit.net/psl7zas.css");
 
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono');
 @import url('https://fonts.googleapis.com/css?family=Srisakdi&display=swap');
@@ -84,7 +84,7 @@ background: linear-gradient(180deg, rgba(161,185,121,1) 0%, rgba(216,135,159,1) 
 }
 
 .bodytext-cursive {
-   font-family: 'Srisakdi', cursive;
+   font-family: 'beloved-script', sans-serif;
 	font-size:2vw;
    color:#eb3492;
    padding-left:20%;
