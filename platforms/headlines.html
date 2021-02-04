@@ -1,0 +1,198 @@
+ <html>
+     <head>
+          <style>
+          
+          
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+  text-align: center;
+}
+
+.headlines {
+    margin:auto;
+    width: 800px;
+    margin-top: 450px;
+    position:static;
+}
+
+.inputs{
+    border: none;
+    resize: none;
+    font-family: Times;
+    font-size:16px;
+    min-width:380px;
+    text-align: center;
+}
+
+.text{
+      margin-left:20px;
+      margin-top:-320px;
+      z-index:-1;
+      position:absolute;
+}
+
+
+h1{
+    font-weight:bold;
+    font-style:italic;
+    font-size:48px;
+        margin-bottom: -20px;
+}
+
+h2{
+     font-weight:normal;
+    font-size:24px;
+    width:500px;
+    margin-left:50px;
+}
+              
+          </style>
+         
+ <script>
+function saveEdits() {
+    //get the editable elements.
+    var editElems = {
+        'edit1': document.getElementById('edit1').innerHTML,
+        'edit2': document.getElementById('edit2').innerHTML,
+        'edit3': document.getElementById('edit3').innerHTML,
+        'edit4': document.getElementById('edit4').innerHTML,
+        'edit5': document.getElementById('edit5').innerHTML,
+        'edit6': document.getElementById('edit6').innerHTML,
+        'edit7': document.getElementById('edit7').innerHTML,
+        'edit8': document.getElementById('edit8').innerHTML
+    };
+
+    //save the content to local storage. Stringify object as localstorage can only support string values
+    localStorage.setItem('userEdits', JSON.stringify(editElems));
+
+    //write a confirmation to the user
+    document.getElementById("update").innerHTML="Edits saved!";
+}
+
+function checkEdits(){
+    //find out if the user has previously saved edits
+    var userEdits = localStorage.getItem('userEdits');
+    if(userEdits){
+        userEdits = JSON.parse(userEdits);
+        for(var elementId in userEdits){
+          document.getElementById(elementId).innerHTML = userEdits[elementId];
+        }
+    }
+}
+     </script>
+     
+ <script>
+        $(document).ready(function(){//when document finished to load
+          $('#send').click(function(){//when user clicked on send button
+            var text = $('#text').val();//get the text from input field
+            $.post('',{text:text},function(data){ // send the text to the current script as a post variable called text
+              alert(data); // when we received the response display it in alert window
+            });
+          });
+        });
+      </script>
+      
+     </head>
+    <body onload="checkEdits()">
+        
+        <div class="text">
+            <h1>
+            We all have something to say, but writing an essay is a pain in the ass.
+            </h1>
+            <h2>
+            This is a space for you to write the names of articles you feel should be written&mdash;
+            <br>Maybe it's something you've been meaning to get around to, or maybe it's something you'd like to read but don't feel the authority to write. Each cell is editable by anyone, and over time this space will change like the front page of a newspaper.
+            </h2>
+        </div>
+
+<center>
+    
+    <?php
+$filename    = 'mylog.log';
+$content     = file_get_contents($filename);
+$coordinates = explode("* ", $content);
+$name1 = substr($coordinates[0], 0);
+$name2 = substr($coordinates[1], 0);
+$name3 = substr($coordinates[2], 0);
+$name4 = substr($coordinates[3], 0);
+$name5 = substr($coordinates[4], 0);
+$name6 = substr($coordinates[5], 0);
+$name7 = substr($coordinates[6], 0);
+$name8 = substr($coordinates[7], 0);
+$name9 = substr($coordinates[8], 0);
+$name10 = substr($coordinates[9], 0);
+?>
+
+
+               
+     
+     
+<div class="headlines">
+    
+    <form action="save-to-log.php" method="POST" >
+         <fieldset style="border: none">
+                <legend></legend>
+                <table>
+  <tr>
+    <td> 
+     <textarea name="message" class="inputs"><?php echo $name1; ?></textarea>
+    </td>
+    <td>
+    <textarea name="message2" class="inputs"><?php echo $name2; ?></textarea>
+    </td>
+  </tr>
+  <tr>
+    <td>
+    <textarea name="message3" class="inputs"><?php echo $name3; ?></textarea>
+    </td>
+    <th>The Steering of a Large Ship, or: Is it Easier to Lead an Army of Small Row Boats </th>
+  </tr>
+  <tr>
+    <td>
+    <textarea name="message4" class="inputs"><?php echo $name4; ?></textarea>
+    </td>
+    <td>
+    <textarea name="message5" class="inputs"><?php echo $name5; ?></textarea>
+    </td>
+  </tr>
+  <tr>
+  <th>Navigating Real Time Directionlessness As the World Drives In A Single Direction</th>
+  <td><textarea name="message6" class="inputs"><?php echo $name6; ?></textarea></td>
+  </tr>
+       <tr>
+    <td><textarea name="message7" class="inputs"><?php echo $name7; ?></textarea></td>
+    <td><textarea name="message8" class="inputs"><?php echo $name8; ?></textarea></td>
+  </tr>
+   <tr>
+   <td><textarea name="message9" class="inputs"><?php echo $name9; ?></textarea></td>
+    <td><textarea name="message10" class="inputs"><?php echo $name10; ?></textarea></td>
+  </tr>
+</table>
+                        <input type="submit" value="save my edits" style="float:auto;
+                        position:absolute; margin-left:480px; margin-top:20px;"/>
+        </fieldset>
+    </form>
+
+</div>
+
+
+
+
+
+        
+        
+
+         
+   
+    
+
+</center>
+
+
+
+</body>
+     
+     
+</html>
