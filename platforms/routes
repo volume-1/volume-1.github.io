@@ -1,0 +1,551 @@
+<html>
+<meta id="meta" name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+
+    <script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> 
+    </script> 
+    <script src= 
+"http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"> 
+    </script> 
+    <script src= 
+"https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"> 
+    </script> 
+    
+
+<style>
+
+body, html {
+    background-color: #ffe291;
+    }
+    
+h1 {
+    font-style: italic;
+    text-align: right;
+}    
+
+h2 {
+    text-align: right;
+}   
+
+h3 {
+    text-align: right;
+} 
+
+.desc{
+    position: relative;
+    float:right;
+    padding-right:45px;
+    width: 15%;
+    max-width:250px;
+    font-family: Helvetica;
+    font-size:18px;
+}    
+    
+.map {
+    	position: fixed;
+        margin-top: 50px;
+        left:5%;
+        z-index:1;
+}
+
+.past {
+    	position: fixed;
+        margin-top: 100px;
+        left:5%;
+        z-index:0;
+        opacity: 0.3;
+}
+    
+.form {
+    position:absolute;
+    float:right;
+    right:0px;
+    top: 90%;
+    padding-top:50px;
+    padding-right:50px;
+}
+
+div.photos {
+ position: relative;
+ top:90%;
+ margin: 15px;
+ float: left;
+ left: 10%;
+ font-family: Helvetica;
+ text-align: center;
+}
+
+.look
+{
+    opacity: 0.6;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+.look:hover {
+   opacity: 1;
+}
+
+div.photos img {
+    float: left;
+    width: 180px;
+    height: auto;
+    z-index: -1;
+}
+
+div.photos p {
+  float: left;
+  padding: 15px;
+  margin: 15px;
+  width: 180px;
+  height: auto;
+  border: 2px solid;
+  font-size:16px;
+}
+
+iframe {
+width: 300px;
+height: 200px;
+}
+
+.butt {
+    max-width:50px;
+    position:absolute;
+    font-size: 14px;
+    padding: 2px;
+    margin: 5px;
+    border: 1px solid;
+}
+
+.butt:active{
+   background-color:red;
+}
+
+#btn {
+     
+}
+
+#clr {
+   
+}
+
+input { 
+            background-color: transparent; 
+            border: 0px solid; 
+            width: 300; 
+        } 
+
+
+/* Large screens ---------- */
+@media screen and (min-width: 1920px){
+    
+   .desc{
+    font-size:24px;
+    width: 15%;
+    max-width:500px;
+    }    
+    
+    div.photos {
+    top:80%;
+    }
+    
+    div.photos p {
+    font-size:20px;
+    width: 220px;
+    }
+    
+    div.photos img {
+    width: 280px;
+    }
+    
+    .form {
+    position:absolute;
+    float:right;
+    right:0px;
+    top: 100%;
+    padding-top:50px;
+    padding-right:50px;
+}
+    
+    .butt {
+    max-width:60px;
+    position:absolute;
+    font-size: 16px;
+    padding: 4px;
+    margin: 20px;
+    border: 1px solid;
+}
+    
+
+}
+
+@media screen and (min-width: 2560px){
+    
+   .desc{
+    font-size:28px;
+    width: 15%;
+    max-width:500px;
+    }    
+    
+     .form {
+    position:absolute;
+    float:right;
+    right:0px;
+    top: 80%;
+    padding-top:50px;
+    padding-right:50px;
+}
+    
+    div.photos {
+    top:55%;
+    }
+    
+    div.photos p {
+    font-size:24px;
+    width: 220px;
+    }
+    
+    div.photos img {
+    width: 320px;
+    }
+    
+   .butt {
+    max-width:75px;
+    position:absolute;
+    font-size: 16px;
+    padding: 4px;
+    margin: 20px;
+    border: 1px solid;
+}
+    
+    
+}
+
+@media screen and (min-width: 2880px){
+    
+   .desc{
+    font-size:32px;
+    width: 15%;
+    max-width:500px;
+    }    
+    
+      .form {
+    position:absolute;
+    float:right;
+    right:0px;
+    top: 70%;
+    padding-top:50px;
+    padding-right:200px;
+}
+
+    div.photos {
+    top:45%;
+    }
+    
+    div.photos p {
+    font-size:28px;
+    width: 340px;
+    margin: 30px;
+    }
+    
+    div.photos img {
+    width: 380px;
+    }
+    
+  .butt {
+    max-width:80px;
+    position:absolute;
+    font-size: 22px;
+    padding: 4px;
+    margin: 30px;
+    border: 1px solid;
+}
+    
+}
+
+@media screen and (min-width: 4096px){
+    
+   .desc{
+    font-size:50px;
+    width: 15%;
+    max-width:800px;
+    }    
+    
+      .form {
+    position:absolute;
+    float:right;
+    right:0px;
+    top: 60%;
+    padding-top:50px;
+    padding-right:50px;
+}
+    
+    div.photos {
+    top:35%;
+    }
+    
+    div.photos p {
+    font-size:36px;
+    width: 380px;
+    margin: 45px;
+    }
+    
+    div.photos img {
+    width: 400px;
+    }
+    
+  .butt {
+    max-width:100px;
+    position:absolute;
+    font-size: 31px;
+    padding: 4px;
+    margin: 60px;
+    border: 1px solid;
+}
+}
+
+@media screen and (min-width: 5120px){
+    
+   .desc{
+    font-size:60px;
+    width: 15%;
+    max-width:1200px;
+    }  
+    
+      .form {
+    position:absolute;
+    float:right;
+    right:0px;
+    top: 60%;
+    padding-top:50px;
+    padding-right:500px;
+}
+    
+    div.photos {
+    top:25%;
+    }
+    
+    div.photos p {
+    font-size:46px;
+    width: 460px;
+    margin: 60px;
+    }
+    
+    div.photos img {
+    width: 600px;
+    }
+    
+    iframe {
+    height: 600px;
+    }
+    
+   .butt {
+    max-width:140px;
+    position:absolute;
+    font-size: 38px;
+    padding: 4px;
+    margin: 75px;
+    border: 1px solid;
+}
+    
+}
+
+
+</style>
+
+   <script type="text/javascript">
+
+   var canvas, ctx, flag = false,
+        prevX = 0,
+        currX = 0,
+        prevY = 0,
+        currY = 0,
+        dot_flag = false;
+
+    var x = "black",
+        y = 2;
+    
+    function init() {
+        canvas = document.getElementById('can');
+        ctx = canvas.getContext("2d");
+        w = canvas.width;
+        h = canvas.height;
+    
+        canvas.addEventListener("mousemove", function (e) {
+            findxy('move', e)
+        }, false);
+        canvas.addEventListener("mousedown", function (e) {
+            findxy('down', e)
+        }, false);
+        canvas.addEventListener("mouseup", function (e) {
+            findxy('up', e)
+        }, false);
+        canvas.addEventListener("mouseout", function (e) {
+            findxy('out', e)
+        }, false);
+    }
+    
+    function draw() {
+        ctx.beginPath();
+        ctx.moveTo(prevX, prevY);
+        ctx.lineTo(currX, currY);
+        ctx.strokeStyle = x;
+        ctx.lineWidth = y;
+        ctx.stroke();
+        ctx.closePath();
+    }
+    
+    function erase() {
+        
+            ctx.clearRect(0, 0, w, h);
+            document.getElementById("canvasimg").style.display = "none";
+        
+    }
+    
+    function save() {
+        document.getElementById("canvasimg").style.border = "2px solid";
+        var dataURL = canvas.toDataURL();
+        document.getElementById("canvasimg").src = dataURL;
+        document.getElementById("canvasimg").style.display = "inline";
+    }
+    
+    function findxy(res, e) {
+        if (res == 'down') {
+            prevX = currX;
+            prevY = currY;
+            currX = e.clientX - canvas.offsetLeft;
+            currY = e.clientY - canvas.offsetTop;
+    
+            flag = true;
+            dot_flag = true;
+            if (dot_flag) {
+                ctx.beginPath();
+                ctx.fillStyle = x;
+                ctx.fillRect(currX, currY, 2, 2);
+                ctx.closePath();
+                dot_flag = false;
+            }
+        }
+        if (res == 'up' || res == "out") {
+            flag = false;
+        }
+        if (res == 'move') {
+            if (flag) {
+                prevX = currX;
+                prevY = currY;
+                currX = e.clientX - canvas.offsetLeft;
+                currY = e.clientY - canvas.offsetTop;
+                draw();
+            }
+        }
+    }
+    
+    var canvas  = document.getElementById("canvas");
+    </script>
+  
+    
+    <body onload="init(); editable(); run_onload();">
+        
+        
+
+<div class="map">
+    <canvas id="can" width="1200" height="700" style="border:2px solid;" class="map"></canvas>
+</div>
+
+<div class="past">
+            <script>
+            var dir = "images/";
+            var fileextension = ".png";
+            
+                    $.ajax({
+                      
+                    //This will retrieve the contents of the folder if the folder is configured as 'browsable'
+                         url: dir,
+                         success: function (data) {
+                             
+                                 //List all .png file names in the page
+                    $(data).find("a:contains(" + fileextension + ")").each(function () {
+                    var filename = this.href.replace(window.location.host, "").replace("http://", "");
+                    $("body").append("<div class='past'><img src='" + filename + "'></div>");
+                  });
+                                                        }
+                    });
+                    
+        
+            // when image is loaded, add it to my div
+             img.addEventListener("load", function(){
+          document.getElementById("past").appendChild(this);
+ });
+            </script>
+            
+        </div>
+
+<script>
+
+    function onSaveChanges(){
+var dataURL = canvas.toDataURL();
+console.log(dataURL);
+
+$.ajax({
+  type: "POST",
+  url: "upload.php",
+  data: { 
+     imgBase64: dataURL
+  }
+}).done(function(o) {
+  console.log('saved'); 
+
+});
+
+
+}
+
+</script>
+
+                
+<input type="button" value="save" id="btn" class="butt" onclick="onSaveChanges(); window.location.reload();" style="top:6%;">
+<input type="button" value="clear" id="clr" class="butt" onclick="erase()" style="top:12%;">
+        
+        
+         <div class="desc">
+             
+            <h1>
+             An idle atlas:
+            </h1>
+             <h2>
+                 <a href="https://www.moma.org/learn/moma_learning/joseph-kosuth-one-and-three-chairs-1965/">One and Two Walks.</a>
+             </h2>
+             <h3>
+                a community walking map that composites routes across time and space, to join our separate paths
+                 </h3>
+
+<p>
+In <a href="https://watermark.silverchair.com/141Tsing.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAAqIwggKeBgkqhkiG9w0BBwagggKPMIICiwIBADCCAoQGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMPE7rLIl-kPg3GWr5AgEQgIICVfjj6Z1VNKTvDTv6o6MXaNKdcG8UOvo8iC9iVrStcm1TKDJ8JqbE74P3D8C_3ra8VXHFrzxz_0Y4FF1CjLbyS4Lq1G-_-0HWyMQUV4IYWnnBXzoXpxaTaeYScA8iF7Lm6t2kvNOPOKSDYgglxmWRjue16_JLoTd6XehZdQ9LJQ_VzRh6rSWPe_Nr9KjJhsrQc5Z4y8Gy2wISUEnlRtWRVv_AnBFWh03PDfrEC-x-ijpvjHFrDtW1-09pwtWMxmpFo7YValOOGDK8G1Ig5QNS1epcpatd-SZXq2y0st-BvYTl24p12jLivaKLMcgNQUp7LXASLWpevAB2d26gBJDKN59RoRMwf_HnjcaFRw9qd_YQrvf5WWI3cRnHjx0_f6L0eGrzeLh-6oyc_voJwgIHocvIHSxJ5P85qzoZYMh_nCp3jtKOVXoIIsMIbI01CeD-D5GrWTfmM954kYP8A_mV7cNPSh9YPeTFANz5w-ZXu0riuTxZtdOVB8lia6y9hsJLK4bbnn_cLmrhD1Ta_JVFaObrBup0xAF5i1nPHU6M-nGzydh8sXf6JYb7gbeYbM7y4lyuB0ChXRM5aWFgm4LO2KGIv0X_6FCRBb3GW6xivboCXHz8sb2K65vTk0x3zRJUo2yCKQVOxNYWGgo79Or3BUFgU6zzf7pIKsY2lfw0guBMdyaySkBXRoVuX1mepznyElDH3xglOS_xHRLPnWmOMR2XOweQ_p-E20lHoUiKHvTNmZz8nn5OpRj2xF-GKoNgnEW19LShJ26c77E3LQm0imezgXy5gA">&quot;Unruly Edges: Mushrooms as Companion Species,&quot;</a> the peaceful and fungus-loving anthropologist Anna Tsing suggests we wander more intuitively, as a forager once would&mdash; to develop a sense of place not through concrete cartography but through &quot;familiarity.&quot; This, along with Giuliana Bruno&apos;s work on <a href="https://www.versobooks.com/blogs/3927-affective-mapping-an-excerpt-from-atlas-of-emotion">the emotional potential of cartography,</a> inspired <i>An Idle Atlas,</i> which charts in 3 ways (abstracted line, image, and text) the different walks we take. Over time, visitors of this site can trace the path of their most recent walk and pair it with as many or as few words as they like. 
+</p>
+
+
+
+  </div>   
+
+        <div class="photos">
+          
+             
+             
+               <p>My hands were chapped and the wind sometimes felt like it was blowing into the veins along the top... the residential areas here curl and snake and fakeout which made it hard to navigate home, the streets branch out like veins themselves! </p>
+               
+<form action="walk.php" method="POST">
+  <fieldset  style="border: 1px solid">
+    <legend>How was your walk?</legend>
+      <textarea name="message" style="resize: none; min-width: 200px; min-height: 200px"></textarea>
+      <br>
+      <input type="submit" value="submit" class="butt" style="position: relative; margin-top: 10px;" />
+  </fieldset>
+</form>
+            
+ 
+ 
+        </div>
+ 
+            
+    </body>
+    
+    </html>
