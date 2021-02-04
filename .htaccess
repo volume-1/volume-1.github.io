@@ -1,0 +1,5 @@
+DirectoryIndex homepage.html
+
+AddType application/x-httpd-php .htm .html
+AddHandler application/x-httpd-php .html
+AddHandler x-httpd-php .html .htm
